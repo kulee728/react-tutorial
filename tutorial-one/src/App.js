@@ -10,19 +10,23 @@ import './App.css'; /* CSS를 얻어와 아래 작성된 태그 옆에 className
  예시: R01_ClassComponent.js 를 R01 별칭 사용해서 App.js에 적용
 */
 
-import BootstrapEx1 from './R14_Bootstrap.js';
-import R01 from './R01_ClassComponent.js'
-import R02 from './R02_FunctionComponent.js'
-import Props1 from './R03_Prop.js'
-import Props2 from './R04_Props2.js'
-import 김연경 from './R05_Prop3.js'
-import StateEx1 from './R06_State1.js'
-import StateEx2 from './R07_State2.js'
-import Ex2 from './R08_State3.js'
-import StateEx4 from './R09_State4.js'
-import StateEx5 from './R10_State5.js'
-import 댓글창 from './R11_State6.js'
-import Context1 from './R12_Conext1.js'
+import BootstrapEx1 from './component/R14_Bootstrap.js';
+import R01 from './component/R01_ClassComponent.js'
+import R02 from './component/R02_FunctionComponent.js'
+import Props1 from './component/R03_Prop.js'
+import Props2 from './component/R04_Props2.js'
+import 김연경 from './component/R05_Prop3.js'
+import StateEx1 from './component/R06_State1.js'
+import StateEx2 from './component/R07_State2.js'
+import Ex2 from './component/R08_State3.js'
+import StateEx4 from './component/R09_State4.js'
+import StateEx5 from './component/R10_State5.js'
+import 댓글창 from './component/R11_State6.js'
+import Context1 from './component/R12_Conext1.js'
+import Context2 from './component/R13_Context2.js'
+import Context11 from './component/R14_Bootstrap.js'
+import Context3 from './component/R15_Context3/Parent.js'
+import Context4 from './component/R16_Context4/PrintAllUser.js'
 function 
 App() {
   return (
@@ -64,8 +68,11 @@ App() {
 
  <StateEx5/>
   <댓글창/>
-  <Context1/>*/}
+  <Context1/>
   <BootstrapEx1/>
+  <Context3/>
+  <Context3/>*/}
+  <Context4/>
     </div>
   );
 }

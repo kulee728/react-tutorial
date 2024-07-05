@@ -15,14 +15,16 @@ npm으로 인한 설치는 npm start로 시작하고 있는 패키지와 관계 
  * App.js에 작성한다.
  * 
  */
-import 'bootstrap/dist/css/bootstrap.css'
+
+
+
 import React from 'react';
 
 const BootstrapEx1 = () =>{
 
     return(
-        <div className="container">
-            <div className="row">
+        <div className="container"> {/*반응형 레이아웃 컨테이너 만들기*/}
+            <div className="row">{/* 행 생성 */}
                 <div ClassName="col-md-auto">
                     <h1>React와 Bootstrap 사용 시작</h1>
                     <button className='btn btn-primary'>부트스트랩 버튼</button>
@@ -34,3 +36,9 @@ const BootstrapEx1 = () =>{
 }
 
 export default BootstrapEx1;
+
+/*
+package manager 종류
+npm = 상대적으로 설치 속도 느림
+yarn = npm 과 똑같은 패키지 관리자 npm 보다 좀 더 빠름.
+*/
