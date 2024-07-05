@@ -9,16 +9,63 @@ import './App.css'; /* CSS를 얻어와 아래 작성된 태그 옆에 className
   
  예시: R01_ClassComponent.js 를 R01 별칭 사용해서 App.js에 적용
 */
+
+import BootstrapEx1 from './R14_Bootstrap.js';
 import R01 from './R01_ClassComponent.js'
 import R02 from './R02_FunctionComponent.js'
-
+import Props1 from './R03_Prop.js'
+import Props2 from './R04_Props2.js'
+import 김연경 from './R05_Prop3.js'
+import StateEx1 from './R06_State1.js'
+import StateEx2 from './R07_State2.js'
+import Ex2 from './R08_State3.js'
+import StateEx4 from './R09_State4.js'
+import StateEx5 from './R10_State5.js'
+import 댓글창 from './R11_State6.js'
+import Context1 from './R12_Conext1.js'
 function 
 App() {
   return (
+    /*
+  주석 -> {/*주로 코드를 주석처리*///} 
+
     <div className="App-header">
-      <R01/>
+      
+      {/*<R01/>*/}
       <p>-------------------------------------</p>
-      <R02/>
+      {/*<R02/>*/}
+      {/*
+      <Props1 num='1' name='홍길동' age='20' score='90'/>
+      <Props1 num='2' name='백길동' age='21' score='91'/>
+      <Props1 num='3' name='청길동' age='23' score='92'/>
+      
+      <h3> Props 예제 2번 사용하기</h3>
+      <Props2 name='강감찬' age='72' gender='남자'/>
+      {/*
+      Props2 객체는 
+    <div className="info">
+        이름 : {name} / 나이 : {age} / 성별 : {gender}
+    </div>
+    <<<< 이 코드를 한줄로 작성하기 위해 가져온 것. 
+      
+      
+
+      
+      <김연경 num='5' name='김연정' age='40' gender='여자' phone='010-1111-2222'/>
+
+ 
+ <StateEx1/>
+
+ <StateEx2/>
+
+<Ex2 init="10" step="5"/> */}
+ {/*<ex2 init="50" step="10"/>
+ <StateEx4  init="50" step="1"/>
+
+ <StateEx5/>
+  <댓글창/>
+  <Context1/>*/}
+  <BootstrapEx1/>
     </div>
   );
 }

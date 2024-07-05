@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko"> 
+<head>
+    <meta charset="UTF-8"> <!--한글 멈춰-->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>입력 버튼을 숨기고 예쁘게 만든 버튼 보여주기</title>
+</head>
+    <style>
+
+    </style>
+
+<body>
+    <form>
+        <!--입력 필드 작성-->
+        <!--
+        label for 적용시 매핑된 file input을 클릭한 것과 같은 효과
+        -->
+        <input type="file" id="inputFile" class="hidingInput">
+        <label for="inputFile" class="inputFileLabel">사진추가</label>
+        <style>
+            .hidingInput{
+                background-color: aqua;
+                display: none; /*숨기기*/
+            }
+            .inputFileLabel{
+                background-color: yellowgreen;
+                padding:10px 20px;
+                font-size:16px;
+                border-radius: 5px;
+                display: inline-block;
+            }
+            
+            .inputFileLabel:hover{
+                background-color: rgb(77, 108, 15);
+                color:white;
+            }
+        </style>
+        
+    </form>
+</body>
+</html>
