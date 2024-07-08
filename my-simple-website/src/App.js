@@ -1,27 +1,25 @@
 import logo from './logo.svg';
 import './App.css';
+import './'
 import Game from './Component/Game';
+import {Routes,Route} from "react-router-dom";
+import Home from './Component/Home';
+import Navbar from './Component/Navbar';
+import Header from './Component/Header';
+import Game2step from './Component/GameTwoStep'
+import TodoList from './Component/TodoList';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>홈페이지 오신 것을 환영합니다.</h1>
-        <Game/>
-      </header>
-      <main>
-        <section>
-          <h2>About Us</h2>
-          <p>이 홈페이지는 간단한 리액트 홈페이지 입니다.</p>
-        </section>
-          <section>
-          <h2>Contact</h2>
-          <p>Email : contact@email.com</p>
-          </section>
-      </main>
-      <footer>
-        <p>&copy;: 2024 My website</p>
-      </footer>
+    <div>
+      <Header/>
+      <Navbar/>
+      <Routes>
+      <Route path="/"     element={ <Home/> }/>
+      <Route path="/game" element={ <Game/> }/>
+      <Route path="/game2step" element={<Game2step/>}/>
+      <Route path="/todolist" element={<TodoList/>}/>
+      </Routes>
     </div>
   );
 }

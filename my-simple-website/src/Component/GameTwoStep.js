@@ -7,14 +7,13 @@ import { Link } from 'react-router-dom';
 
 const Game =() =>{
     //사용자가 맞출 숫자를 입력 : guess
-    const [guess,setGuess] = useState(''); //html 에서 모니터링 하는 값은 hook. 이때 hook 은 동기화 상태가 유지되지만
-    const [message,setMessage] = useState(''); //hook 을 제외한 다른 js 영역은 비동기 상태이다.
+    const [guess,setGuess] = useState('');
+    const [message,setMessage] = useState('');
     const [number,setNumber] = useState(Math.floor(Math.random()*10)+1);
     const [attempts, setAttempts] = useState(0);
     const maxAttemps = 10;
     const [remainingAttemps, setRemainingAttempts] = useState(maxAttemps);
-    const [isCorrect,setIsCorrect] = useState(false);
-
+    let isCorrect = false;
     //사용자가 숫자를 맞추려 할 때마다(버튼제출) attepts를 올려보자
     
     const handleSubmit=(e)=>{
@@ -24,9 +23,6 @@ const Game =() =>{
             
             if(userGuess === number && remainingAttemps!==0){
                 setMessage("축하축하추! 맞췄추!");
-                const hiddenClass = document.getElementById("toStepTwo");
-                setIsCorrect(true);
-                isCorrect = true
             }
             else{
                 if(remainingAttemps===0){
@@ -62,7 +58,7 @@ const Game =() =>{
 
     return (
         <div>
-            <h1>숫자 맞추기 게임</h1>
+            <h1>숫자 맞추기 게임2</h1>
             <form onSubmit={handleSubmit}>
                 <input type="number"
                     value={guess}
@@ -74,11 +70,9 @@ const Game =() =>{
             <p>{message}</p>
             <p>현재 추측 횟수 : {attempts}</p>
             <p>남은 추측 횟수 : {maxAttemps-attempts}</p>
-
-            {isCorrect? (<Link to="/game2step" id="toStepTwo">다음 단계로 이동하기</Link>): 
-            <button onClick={handleRestart}>재시작버튼</button>}
-            
-            {/*!isCorrect && (<Link to="/game2step" id="toStepTwo">다음 단계로 이동하기</Link>)*/}
+            {isCorrect? (<Link to="/game">처음으로 돌아가기</Link>
+            ) : (<button onClick={handleRestart}>재시작버튼</button>
+                )}
         </div>
 
     )
