@@ -6,6 +6,7 @@ import { Routes, Route } from "react-router-dom";
 import Main from "./Components/Main";
 import TodoList from "./Components/TodoList";
 import TicTacToe from "./Components/TicTacToe";
+import DodgeGoblin from "./Components/DodgeGoblin";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/" element={<Main/>}></Route>
         <Route path="/todoList" element={<TodoList/>}></Route>
         <Route path="/tic-tac-toe" element={<TicTacToe/>}></Route>
+        <Route path="/dodgeGoblin" element={<DodgeGoblin/>}></Route>
       </Routes>
     </div>
   );

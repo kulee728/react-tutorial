@@ -6,7 +6,7 @@ const shuffleArray = (array) => {
 };
 
 const TicTacToe= () => {
-  const [numbers, setNumbers] = useState(shuffleArray([...Array(9).keys()].map(n => n + 1)));
+  const [numbers, setNumbers] = useState(shuffleArray([...Array(20).keys()].map(n => n + 1)));
   const [nextNumber, setNextNumber] =useState('1'); //1부터 시작
   const [message, setMessage] = useState('');//빈공간으로 놓기
   const [isFailed,setIsFailed] = useState(false);
@@ -15,14 +15,15 @@ const TicTacToe= () => {
     if(isFailed || isSucess){
         return;
     }
+    
     console.log("numbers[index] = "+numbers[index]);
     console.log(nextNumber);
     if ( Number(numbers[index]) === Number(nextNumber)) { //클릭한 숫자가 nextNumber (원래 클릭되어야하는 숫자인경우)
-      if (nextNumber === 9) { 
+      if (nextNumber === 20) { 
         //맞추면 메세지내용 맞췄습니다.! 로 변경하기
         setMessage('정답입니다! 축하합니다!')
             setIsSucess(true);
-            const btnId = document.getElementById('button_'+9);
+            const btnId = document.getElementById('button_'+20);
             btnId.classList.replace("number-button","number-button-success");
 
       } else {
@@ -38,7 +39,7 @@ const TicTacToe= () => {
       }
     } else {
      //틀렸을경우 메세지 보여주기
-        for(let i =1;i<=9;i++){
+        for(let i =1;i<=numbers.length;i++){
             const btnId = document.getElementById('button_'+i);
             btnId.classList.replace("number-button","number-button-disabled");
             btnId.setAttribute('disabled', '');
@@ -50,12 +51,12 @@ const TicTacToe= () => {
   };
 
   const handleRestart = () => {
-    setNumbers(shuffleArray([...Array(9).keys()].map(n => n + 1)));
+    setNumbers(shuffleArray([...Array(20).keys()].map(n => n + 1)));
     setMessage('');
     setNextNumber('1');
     setIsFailed(false);
     setIsSucess(false);
-    for(let i =1;i<=9;i++){
+    for(let i =1;i<=numbers.length;i++){
         const btnId = document.getElementById('button_'+i);
         btnId.classList.remove("number-button-disabled");
         btnId.classList.remove("number-button-success");

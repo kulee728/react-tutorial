@@ -8,6 +8,7 @@ const Navbar =()=>{
                 <li><Link to="/">메인으로 이동하기</Link></li>
                 <li><Link to="/todoList">todoList</Link></li>
                 <li><Link to="/tic-tac-toe">tic-tac-toe</Link></li>
+                <li><Link to="/dodgeGoblin">dodgeGoblin</Link></li>
             </ul>
         </nav>   
     )
