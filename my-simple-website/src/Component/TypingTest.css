@@ -1,0 +1,27 @@
+.typing-test{
+    text-align: center;
+    margin-top: 50px;
+}
+.typing-test p{
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+.typing-contianer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:20px;
+}
+
+.typing-test textarea{
+    width:50%;
+    height:50px;
+}
+.character-image{
+    width:200px;
+    height:auto;
+    border-radius: 10px;
+}
+.result{
+    margin-top:20px;
+}

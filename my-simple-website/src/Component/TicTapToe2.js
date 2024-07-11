@@ -5,17 +5,56 @@ const shuffleArray = (array) => {
   return array.sort(() => Math.random() - 0.5);
 };
 
+
+
+/*
+ * 틱택토2스탭 컴포넌트 시작 위치
+ * 
+ */
 const TicTacToe= () => {
   const [numbers, setNumbers] = useState(shuffleArray([...Array(20).keys()].map(n => n + 1)));
   const [nextNumber, setNextNumber] =useState('1'); //1부터 시작
   const [message, setMessage] = useState('');//빈공간으로 놓기
   const [isFailed,setIsFailed] = useState(false);
   const [isSucess,setIsSucess] = useState(false);
+  const [timer,setTimer] = useState(500); //시간 타이머 초기설정하기
+  /*
+  useEffect(()=>{
+    setTimer(3);
+    console.log("useEffect 호출됨");
+  },[]);
+*/
+  useEffect(()=>{
+    let countdown;
+    if(timer>0) {//남은시간 0보다 크다면
+      countdown = setTimeout(()=>{
+        setTimer(t=>t-1);
+      },1000); //setTimeout(실행할 기능, )
+
+    } else if(timer<=0){
+      alert("시간초과!");
+    }
+  });
+
+  /*
+  예시1
+  useEffect( ()=>{}, [nextNumber]) : nextNumber의 값이 바뀔 때 마다 useEffect가 실행됨.
+
+ 
+ 예시2
+  useEffect( function 기능명  () => {어떤 기능이 동작해야하나요?  }, 
+  [어떤값이변경될때마다 function기능이 움직여야하나요?]);
+  
+  */
+  
   const handleNumberClick = (index) => {
     if(isFailed || isSucess){
         return;
     }
     
+    
+    
+
     console.log("numbers[index] = "+numbers[index]);
     console.log(nextNumber);
     if ( Number(numbers[index]) === Number(nextNumber)) { //클릭한 숫자가 nextNumber (원래 클릭되어야하는 숫자인경우)
@@ -56,6 +95,7 @@ const TicTacToe= () => {
     setNextNumber('1');
     setIsFailed(false);
     setIsSucess(false);
+    setTimer('10');
     for(let i =1;i<=numbers.length;i++){
         const btnId = document.getElementById('button_'+i);
         btnId.classList.remove("number-button-disabled");
@@ -70,6 +110,8 @@ const TicTacToe= () => {
   return (
     <div className="tic-tac-container">
       <h1>TicTac</h1>
+
+      <div className='timer'>남은 시간 : {timer}초</div>
       <div className="grid">
         {numbers.map((number,index) => (
           <button id={'button_'+number} key={index} onClick={() => handleNumberClick(index)} className="number-button">
