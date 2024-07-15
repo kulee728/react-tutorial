@@ -27,8 +27,19 @@ import Context2 from './component/R13_Context2.js'
 import Context11 from './component/R14_Bootstrap.js'
 import Context3 from './component/R15_Context3/Parent.js'
 import Context4 from './component/R16_Context4/PrintAllUser.js'
-function 
-App() {
+import RefEx1 from './component/R19_useRef.js';
+import RefEx2 from './component/R20_useRefInput.js';
+import RefEx3 from './component/R21_useRefSignUp.js';
+import {SignUpform2 as RefEx4} from './component/R22_useRefEx.js';
+import AxiosEx1 from './component/R25_Axios_Ex1.js';
+import Axios_Ex2 from './component/R26_Axios_Ex2.js';
+import FectchEx1 from './component/R28_Fetch_Ex1.js';
+import FetchEx2 from './component/R29_Fetch_Ex2.js';
+import Board from './component/R30_Pagination/Board.js';
+import Album from './component/R31_PaginationEx/Album.js';
+import PaginationEx4 from './component/R31_PaginationEx4.js';
+import ProfileImageChange from './component/R32_Profile.js';
+function App(){
   return (
     /*
   주석 -> {/*주로 코드를 주석처리*///} 
@@ -71,8 +82,20 @@ App() {
   <Context1/>
   <BootstrapEx1/>
   <Context3/>
-  <Context3/>*/}
+  <Context3/>
   <Context4/>
+  <RefEx1/>
+  <RefEx2/>
+  <RefEx3/>
+  <RefEx4/>
+  <AxiosEx1/>
+  <Axios_Ex2/>
+  <FectchEx1/>
+  <FetchEx2/>
+  <Board/>
+  <Album/>
+  <PaginationEx4/>*/}
+  <ProfileImageChange/>
     </div>
   );
 }

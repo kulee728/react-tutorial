@@ -1,0 +1,27 @@
+.profile-container{
+    text-align:center;
+    margin-top:50px;
+}
+input {
+    margin:20px;
+}
+img {
+    width:200px;
+    height:200px;
+    border-radius: 200px;
+    border:2px solid #ddd;
+    padding:5px;
+    margin-top:20px;
+}
+label{
+    background-color: yellowgreen;
+    padding:6px 12px;
+    color:white;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 20px;
+    cursor: pointer;
+}
+label:hover{
+    background-color: green;
+}

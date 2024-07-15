@@ -3,10 +3,11 @@ import React, { useState,useRef, useEffect} from 'react';
 const Game = () => {
     const canvasRef = useRef(null);
     const [player, setPlayer] = useState({ x: 50, y: 50 });
-    const [obstacles, setObstacles] = useState([{ x: 300, y: 50 }]);
+    const [obstacles, setObstacles] = useState([{ x: 700, y: 50 }]);
     const [isRunning, setIsRunning] = useState(true); //boolean값 설정
     const playerImageRef = useRef(null);
     const obstacleImageRef = useRef(null);
+    const [dodgedObstacles,setDodgedObstacles] = useState(0);
 
     useEffect(() => {
         const playerImg = new Image();
@@ -21,7 +22,7 @@ const Game = () => {
         };
 
         const obstacleImg = new Image();
-        obstacleImg.src = process.env.PUBLIC_URL + '/obstacle.png';
+        obstacleImg.src = process.env.PUBLIC_URL + '/kwang.png'; //obstacle.png
         obstacleImg.onload = () => {
             obstacleImageRef.current = obstacleImg;
             console.log('Obstacle 이미지 가져오기 실패');
@@ -60,7 +61,7 @@ const Game = () => {
 
 
     useEffect(() => {
-        const canvas = canvasRef.current;
+        const canvas = canvasRef.current; //canvas. 사진이나 그림, 배경을 표현할 때 사용한다.
         const context = canvas.getContext('2d');
 
         const updateGame = () => {
@@ -79,25 +80,28 @@ const Game = () => {
 
             let newObstacles = obstacles.map(obstacle => ({
                 ...obstacle,
-                x: obstacle.x - 5
+                x: obstacle.x - 20
             })).filter(obstacle => obstacle.x > 0);
 
 
             newObstacles.forEach(obstacle => {
                 if (obstacleImageRef.current) {
-                    context.drawImage(obstacleImageRef.current, obstacle.x, obstacle.y, 40, 40);
+                    context.drawImage(obstacleImageRef.current, obstacle.x, obstacle.y, 100, 100);
                 } else {
                     context.fillStyle = 'red';
                     context.fillRect(obstacle.x, obstacle.y, 40, 40);
                 }
 
                 if (
-                    player.x < obstacle.x + 20 &&
-                    player.x + 20 > obstacle.x &&
-                    player.y < obstacle.y + 20 &&
-                    player.y + 20 > obstacle.y
+                    player.x < obstacle.x+100 &&
+                    player.x  > obstacle.x &&
+                    player.y+20 > obstacle.y &&
+                    player.y+20  < obstacle.y+100
                 ) {
                     setIsRunning(false);
+                }
+                if(obstacle.x<=20){
+                    setDodgedObstacles(dodgedObstacles+1);
                 }
             });
 
@@ -123,6 +127,8 @@ const Game = () => {
     }, [isRunning]);
 
     return (
+        <>
+        <h1>피한 개수 : {dodgedObstacles}</h1><br/>
         <div className="game-container">
             <canvas ref={canvasRef} width="1000" height="800" className="game-canvas" />
             <button onClick={() => setIsRunning(!isRunning)} className="game-button">
@@ -130,6 +136,8 @@ const Game = () => {
             </button>
             {!isRunning && <h2>Game Over</h2>}
         </div>
+        </>
+
     );
 };
 

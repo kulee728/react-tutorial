@@ -12,6 +12,7 @@ import TodoList from './Component/TodoList';
 import TicTapToe from './Component/TicTapToe';
 import TicTapToe2 from './Component/TicTapToe2';
 import TypingTest from './Component/TypingTest';
+import MovieRating from './Component/Movie/MovieGrade';
 function App() {
   return (
     <div>
@@ -25,7 +26,9 @@ function App() {
       <Route path="/tictaptoe" element={<TicTapToe/>}/>
       <Route path="/tictaptoe2" element={<TicTapToe2/>}/>
       <Route path="/TypingTest" element={<TypingTest/>}/>
+      <Route path="/movierating" element={<MovieRating/>}/>
       </Routes>
+
     </div>
   );
 }

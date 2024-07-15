@@ -20,7 +20,7 @@ function UseEffectEx(){
         function 이 실행된다.
         deps 를 작성하지 않고, function만 작성하면 컴포넌트가 실행될 때에만 function 호출.
 
-        useEffect(()=>{},[]) 기본 형태. 익명함수,빈배열
+        {/*useEffect(()=>{},[]) 기본 형태. 익명함수,빈배열*/}
    
     </div>
     )
